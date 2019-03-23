@@ -36,7 +36,7 @@ namespace eCommerce.ApplicationLayer.Carts
 
             Customer customer = this.customerRepository.FindById(customerId);
             if (customer == null)
-                throw new Exception(String.Format("Customer was not found with this Id: {0}", customerId));
+                throw new Exception($"Customer was not found with this Id: {customerId}");
 
             Cart cart = this.cartRepository.FindOne(new CustomerCartSpec(customerId));
             if(cart == null)
